@@ -1,15 +1,16 @@
-import logo from "./logo.svg";
 import "./App.css";
-import usePokemon from "./hooks/usePokemon";
-import { PokeCard } from "./components";
+import { StaticNavigator } from "./navigation";
+import { CardsProvider } from "./context/cardContext";
+import { PlayersProvider } from "./context/playersContext";
 
 function App() {
-  const { pokemons } = usePokemon();
   return (
     <div className="App">
-      {pokemons.map((pokeInfo) => (
-        <PokeCard key={pokeInfo.id} pokeInfo={pokeInfo} />
-      ))}
+      <PlayersProvider>
+        <CardsProvider>
+          <StaticNavigator />
+        </CardsProvider>
+      </PlayersProvider>
     </div>
   );
 }

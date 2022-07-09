@@ -1,12 +1,13 @@
 :root {
-  --color-1: yellow;
-  --color-1__modal: #f8de81;
-  --color-2: ;
-  --color-2__modal: ;
+  --color-1: #ffcc03;
+  --color-1__modal: #ffcc03aa;
+  --color-2: #2653cf;
+  --color-2__modal: #268bcfaa;
   --color-3: ;
   --color-3__modal: ;
-  --color-white: ;
-  --color-white__modal: ;
-  --color-black: ;
-  --color-black__modal: ;
+  --color-white: #ffffff;
+  --color-white__modal: #ffffff88;
+  --color-black: #000000;
+  --color-black__modal: #00000088;
+  --color-error: #ff0000;
 }

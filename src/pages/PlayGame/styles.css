@@ -1,0 +1,99 @@
+.page-play-game__container {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--color-black);
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.page-play-game__info {
+  position: sticky;
+  top: 0;
+  width: 25%;
+  max-width: 500px;
+  background-color: var(--color-1__modal);
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 50px;
+}
+.page-play-game__cards {
+  width: 75%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.player-play-game__turn {
+  align-items: center;
+  justify-content: center;
+}
+
+.page-play-game__turn,
+.page-play-game__players-info {
+  background-color: var(--color-2__modal);
+  width: 70%;
+  border-radius: 8px;
+  padding: 20px;
+  border: 2px solid var(--color-1);
+}
+.page-play-game__turn p {
+  margin: 0;
+  font-family: Pokemon;
+  color: var(--color-1);
+  letter-spacing: 4px;
+  font-weight: bold;
+  font-size: 28px;
+  -webkit-text-stroke: 1px var(--color-2);
+  line-height: 40px;
+}
+.page-play-game__players-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 300px;
+}
+.page-play-game__title {
+  margin: 0;
+  font-family: Pokemon;
+  color: var(--color-1);
+  letter-spacing: 4px;
+  font-weight: bold;
+  font-size: 28px;
+  -webkit-text-stroke: 1px var(--color-2);
+  line-height: 40px;
+}
+
+.page-play-game__players {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.page-play-game__player-info h3 {
+  font-size: 25px;
+  margin: 0;
+  color: var(--color-1);
+}
+.page-play-game__player-info p {
+  font-family: sans-serif;
+  font-size: 25px;
+  margin: 0;
+  font-weight: bold;
+  color: var(--color-1);
+}
+
+.page-play-game__player-info p span {
+  font-family: Pokemon;
+  color: var(--color-1);
+  letter-spacing: 4px;
+  font-weight: bold;
+  font-size: 28px;
+  -webkit-text-stroke: 1px var(--color-2);
+  line-height: 40px;
+}

@@ -1,0 +1,112 @@
+:root {
+  --season-card__img: "";
+}
+
+.season-card__container {
+  display: flex;
+  gap: 0px;
+  position: relative;
+  width: 180px;
+  cursor: pointer;
+  transition: all 0.2s linear;
+  border-radius: 500px;
+  border: 1px solid var(--color-1);
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.season-card__season-indicator {
+  position: absolute;
+  color: var(--color-1);
+  font-family: "Pokemon";
+  background-color: var(--color-black__modal);
+  width: 30px;
+  height: 30px;
+  border-radius: 500px;
+  border: 2px solid var(--color-1);
+  left: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  line-height: 23px;
+  text-align: center;
+  z-index: 20;
+  transition: all 0.2s linear;
+}
+
+.season-card__background-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(14px);
+}
+.season-card__img {
+  margin: 0 -10px;
+  width: 50px;
+  height: 50px;
+  background-position: center;
+  background-size: 1000%;
+  transition: all 0.2s linear;
+}
+
+.season-card__img > img {
+  max-height: 100%;
+  max-width: 100%;
+  z-index: 10;
+  transition: all 0.2s linear;
+}
+
+.season-card__img:nth-child(4) > img {
+  position: relative;
+  z-index: 10;
+  transform: rotateZ(15deg);
+}
+.season-card__img:nth-child(5) > img {
+  position: relative;
+  transform: rotateZ(0deg);
+  z-index: 20;
+}
+.season-card__img:nth-child(6) > img {
+  position: relative;
+  z-index: 10;
+  transform: rotateZ(-15deg);
+}
+
+.season-card__container:hover .season-card__img > img,
+.season-card__container--active .season-card__img > img {
+  transform: scale(1.1);
+}
+
+.season-card__container:hover .season-card__img,
+.season-card__container--active .season-card__img{
+  margin: 0 -7px;
+}
+
+.season-card__container:hover,
+.season-card__container--active {
+  border-color: var(--color-2);
+  transform: scale(1.1);
+}
+
+.season-card__selector {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  top: 0;
+  bottom: 0;
+  left: -75px;
+  margin: auto;
+  transform: scale(0.2);
+  z-index: 20;
+  transform: scale(0);
+  transition: all 0.2s linear;
+}
+
+.season-card__container--active .season-card__season-indicator {
+  /* background-color: #00000044; */
+}
+
+.season-card__selector--active {
+  transform: scale(0.2);
+}

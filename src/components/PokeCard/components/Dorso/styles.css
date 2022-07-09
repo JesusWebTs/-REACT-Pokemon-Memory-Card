@@ -1,0 +1,23 @@
+.poke-card-dorso__container {
+  border: 3px solid var(--color-1);
+  display: grid;
+  width: 300px;
+  height: 400px;
+  padding: 15px 15px;
+  position: relative;
+  border-radius: 10px;
+  background-color: black;
+  cursor: pointer;
+  background-image: url("../../../../assets/imgs/dorso-2.jpg");
+  background-position: -100px -10px;
+  background-size: cover;
+}
+
+/* .poke-card-dorso__container {
+  border: none;
+  background-image: url("../../../../assets/imgs/dorso-4.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+ */
