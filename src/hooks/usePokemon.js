@@ -10,7 +10,7 @@ function usePokemon() {
   const { seasonFilter } = useContext(CardsContext);
   const [pokemonIds, setPokemonsIds] = useState([]);
   const [randomPokemonIds, setRandomPokemonIds] = useState([]);
-  const [amount, setAmount] = useState(10);
+  const [amount, setAmount] = useState(2);
 
   useEffect(() => {
     setSearch(true);
@@ -30,7 +30,7 @@ function usePokemon() {
     if (keys) {
       keys.forEach((key) => (ids = [...ids, pokemonIds[key]]));
       ids = ids.map((el) => [el, el]).flat();
-      ids = shuffleArray(ids);   
+      ids = shuffleArray(ids);
       setRandomPokemonIds(ids);
     }
 

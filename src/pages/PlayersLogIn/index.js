@@ -21,8 +21,9 @@ function PlayersLogIn() {
   };
   return (
     <div className="page-login__container">
-      <div className="page-login__form"></div>
-      <PlayerForm onSubmit={navigateToPlayGame} />
+      <div className="page-login__form">
+        <PlayerForm onSubmit={navigateToPlayGame} />
+      </div>
       <div className="page-login__season">
         <h2>Generations</h2>
         {seasons.map((season) => (

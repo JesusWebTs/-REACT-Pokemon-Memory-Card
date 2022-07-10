@@ -1,11 +1,24 @@
 import React, { useContext, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import { CardsContext } from "../../context/cardContext";
 import { PlayersContext } from "../../context/playersContext";
-function usePlayGame() {
-  const { turnCard, resetCards, setFlipedList, targets, targetsIds } =
-    useContext(CardsContext);
-  const { addPlayerCard, changeTurn, playerTurn, nextTurn } =
+function usePlayGame({ pokemons }) {
+  let navigate = useNavigate();
+  const {
+    turnCard,
+    resetCards,
+    setFlipedList,
+    targets,
+    targetsIds,
+    flippedList,
+  } = useContext(CardsContext);
+  const { addPlayerCard, changeTurn, playerTurn, nextTurn, availableToPlay } =
     useContext(PlayersContext);
+
+  useEffect(() => {
+    //if (!availableToPlay) navigate("/");
+    return () => {};
+  }, []);
 
   useEffect(() => {
     if (targets.length === 2) {
@@ -23,6 +36,16 @@ function usePlayGame() {
     }
     return () => {};
   }, [targets]);
+
+  useEffect(() => {
+    if (pokemons.length === 0) return;
+
+    if (flippedList.length * 2 >= pokemons.length) {
+      setTimeout(() => navigate("/game-over"), 1000);
+    }
+
+    return () => {};
+  }, [flippedList, pokemons]);
 
   return { turnCard };
 }
