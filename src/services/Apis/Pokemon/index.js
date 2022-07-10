@@ -1,7 +1,7 @@
 import PokeInfoDTO from "../../../DTO/PokeInfo.DTO";
 import Request from "../abstract";
 
-class Articles extends Request {
+class Pokemon extends Request {
   constructor({ url = "", baseURL = "", headers = "" } = {}) {
     super({ url, baseURL, headers });
   }
@@ -17,4 +17,4 @@ class Articles extends Request {
     });
   }
 }
-export default Articles;
+export default Pokemon;

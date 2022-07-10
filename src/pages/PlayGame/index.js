@@ -8,13 +8,12 @@ import { PlayersContext } from "../../context/playersContext";
 
 function PlayGame() {
   const { pokemons } = usePokemon();
-  const {} = usePlayGame();
+  const { turnCard } = usePlayGame();
 
-  const { player1, player2, currentPlayer, setPlayerTurn, turn, resetAll } =
+  const { player1, player2, currentPlayer, setPlayerTurn, turn } =
     useContext(PlayersContext);
   useEffect(() => {
     setPlayerTurn(1);
-
     return () => {};
   }, []);
 

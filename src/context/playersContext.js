@@ -47,7 +47,7 @@ function PlayersProvider({ children }) {
     if (player === 1) {
       setPlayer1((prev) => ({ ...prev, cards: [...player1.cards, cardid] }));
     } else if (player === 2) {
-      setPlayer2((prev) => ({ ...prev, cards: [...player1.cards, cardid] }));
+      setPlayer2((prev) => ({ ...prev, cards: [...player2.cards, cardid] }));
     }
   };
 

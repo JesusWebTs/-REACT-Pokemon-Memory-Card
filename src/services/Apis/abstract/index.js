@@ -4,6 +4,11 @@ class Request {
   _headers;
   _request;
   constructor({ url = "", baseURL = "", headers = "" } = {}) {
+    if (new.target === this)
+      return console.log(
+        `[Abstract Class] ${new.target.name} can be instance - invalid new`
+      );
+
     this._url = url;
     this._headers = headers;
     this._baseURL = baseURL;
@@ -68,14 +73,15 @@ class Request {
       return res;
     });
   }
-  async delete({ uuid }) {
+  async delete({ id, endPoint = "" }) {
     return this._request({
-      url: `${this._url}`,
-      data: { uuid },
+      url: `${endPoint}/${id}`,
+      data: { id },
       method: "DELETE",
     }).then((res) => {
       return res;
     });
   }
 }
+
 export default Request;
