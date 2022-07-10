@@ -20,7 +20,7 @@ function PlayersProvider({ children }) {
   const [player1, setPlayer1] = useState(initialState.player1);
   const [player2, setPlayer2] = useState(initialState.player2);
   const [playerTurn, setPlayerTurn] = useState(0);
-  const [turn, seTurn] = useState(0);
+  const [turn, setTurn] = useState(0);
   const [currentPlayer, setCurrentPlayer] = useState({
     uuid: "",
     name: "",
@@ -31,7 +31,7 @@ function PlayersProvider({ children }) {
     setPlayer1(initialState.player1);
     setPlayer2(initialState.player2);
     setPlayerTurn(0);
-    seTurn(0);
+    setTurn(0);
     setAvailableToPlay(false);
     setCurrentPlayer({
       uuid: "",
@@ -46,6 +46,13 @@ function PlayersProvider({ children }) {
     setAvailableToPlay(true);
   };
 
+  const newGame = () => {
+    setPlayer1((prev) => ({ ...prev, cards: [] }));
+    setPlayer2((prev) => ({ ...prev, cards: [] }));
+    setPlayerTurn(0);
+    setTurn(0);
+  };
+
   const addPlayerCard = ({ player, cardid }) => {
     if (player === 1) {
       setPlayer1((prev) => ({ ...prev, cards: [...player1.cards, cardid] }));
@@ -55,7 +62,7 @@ function PlayersProvider({ children }) {
   };
 
   const nextTurn = () => {
-    seTurn((prev) => prev + 1);
+    setTurn((prev) => prev + 1);
   };
 
   const changeTurn = () => {
@@ -88,6 +95,7 @@ function PlayersProvider({ children }) {
         resetAll,
         nextTurn,
         availableToPlay,
+        newGame,
       }}
     >
       {children}

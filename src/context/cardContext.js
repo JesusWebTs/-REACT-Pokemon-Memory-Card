@@ -19,6 +19,7 @@ function CardsProvider({ children }) {
 
   const filterSeason = ({ season }) => {
     if (seasonFilter.includes(season)) {
+      if (seasonFilter.length === 1) return;
       setSeasonFilter(seasonFilter.filter((el) => el !== season));
     } else {
       setSeasonFilter((prev) => [...prev, season]);
@@ -28,6 +29,11 @@ function CardsProvider({ children }) {
   const resetCards = () => {
     setTargetsIds([]);
     setTargets([]);
+  };
+
+  const resetGame = () => {
+    resetCards();
+    setFlipedList([]);
   };
 
   return (
@@ -44,6 +50,7 @@ function CardsProvider({ children }) {
         setTargets,
         targetsIds,
         setTargetsIds,
+        resetGame,
       }}
     >
       {children}

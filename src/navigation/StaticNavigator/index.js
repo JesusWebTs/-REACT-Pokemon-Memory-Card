@@ -11,6 +11,7 @@ function StaticNavigator() {
         <Route path="/play" element={<PlayGame />} />
         <Route path="/score" element={<div>Score</div>} />
         <Route path="/game-over" element={<GameOver />} />
+        <Route path="/scores" element={<GameOver />} />
         <Route path="/test" element={<TestBackend />} />
       </Routes>
     </BrowserRouter>

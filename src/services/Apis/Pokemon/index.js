@@ -6,15 +6,19 @@ class Pokemon extends Request {
     super({ url, baseURL, headers });
   }
 
-  getPokemonInfo({ id = 1 }) {
-    return Promise.all([
+  async getPokemonInfo({ id = 1 }) {
+    const pokeInfo = await Promise.all([
       this.getOne({ endPoint: "/pokemon", id }),
       this.getOne({ endPoint: "/pokemon-species", id }),
-    ]).then((pokeInfo) => {
-      return new PokeInfoDTO({
-        pokeInfo,
-      });
+    ]);
+    return new PokeInfoDTO({
+      pokeInfo,
     });
+  }
+
+  async getAllPokemonInfo({ ids = [] }) {
+    let promises = ids.map((id) => this.getPokemonInfo({ id }));
+    return await Promise.all(promises).then((el) => el);
   }
 }
 export default Pokemon;

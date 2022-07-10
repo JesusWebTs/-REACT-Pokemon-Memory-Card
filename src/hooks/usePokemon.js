@@ -10,13 +10,12 @@ function usePokemon() {
   const { seasonFilter } = useContext(CardsContext);
   const [pokemonIds, setPokemonsIds] = useState([]);
   const [randomPokemonIds, setRandomPokemonIds] = useState([]);
-  const [amount, setAmount] = useState(2);
+  const [amount, setAmount] = useState(8);
 
   useEffect(() => {
     setSearch(true);
     setPokemons([]);
     setPokemonsIds([]);
-
     return () => {};
   }, []);
 
@@ -35,17 +34,23 @@ function usePokemon() {
     }
 
     return () => {};
-  }, [pokemonIds]);
-
+  }, [pokemonIds]); 
+  
+ 
   useEffect(() => {
     if (search)
-      randomPokemonIds.forEach((el) => {
-        pokemonApi
-          .getPokemonInfo({ id: el })
-          .then((res) => setPokemons((pokemon) => [...pokemon, res]));
-      });
+      pokemonApi
+        .getAllPokemonInfo({ ids: randomPokemonIds })
+        .then((pokemons) => setPokemons(pokemons));
     return () => {};
   }, [randomPokemonIds]);
+
+  useEffect(() => {
+    pokemonApi
+      .getAllPokemonInfo({ ids: [1, 2, 3, 4] })
+      .then((res) => console.log(res));
+    return () => {};
+  }, []);
 
   const getPokemonsIdsFiltered = () => {
     let ids = [];

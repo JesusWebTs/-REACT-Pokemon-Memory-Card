@@ -7,7 +7,7 @@
   border-radius: 50%;
   box-shadow: inset -10px 10px 0 10px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  animation: gira 2s cubic-bezier(0,.99,1,-0.02) infinite alternate;
+  animation: gira 2s cubic-bezier(0, 0.99, 1, -0.02) infinite alternate;
   margin: 20px auto;
 }
 .pokebola:before,
@@ -62,5 +62,4 @@
   100% {
     transform: rotate(-10deg);
   }
-
 }

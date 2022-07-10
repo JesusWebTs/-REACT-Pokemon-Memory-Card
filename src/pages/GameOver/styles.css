@@ -68,7 +68,7 @@
   letter-spacing: 2px;
 }
 
-.page-game-over__submit > button {
+.page-game-over__navigate > button {
   z-index: 20;
   font-family: sans-serif;
   color: var(--color-white);
@@ -84,16 +84,17 @@
   cursor: pointer;
 }
 
-.page-game-over__submit {
+.page-game-over__navigate {
   position: relative;
   transition: all 0.2s linear;
 }
 
-.page-game-over__submit:hover {
+.page-game-over__navigate:hover {
   transform: scale(1.1);
 }
 
 .page-game-over__decorator {
+  pointer-events: none;
   height: 170px;
   width: 170px;
   transform: scale(0.25);
@@ -106,7 +107,7 @@
   transition: all 0.3s linear;
 }
 
-.page-game-over__submit:hover .page-game-over__decorator {
+.page-game-over__navigate:hover .page-game-over__decorator {
   left: 0%;
   right: -100%;
 }

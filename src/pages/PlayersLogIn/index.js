@@ -31,6 +31,7 @@ function PlayersLogIn() {
             <SeasonCard season={season} />
           </React.Fragment>
         ))}
+        <button className="page-login__scores">Scores</button>
       </div>
     </div>
   );

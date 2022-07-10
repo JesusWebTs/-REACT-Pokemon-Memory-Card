@@ -15,7 +15,7 @@
 .page-login__season {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   align-items: center;
   gap: 15px;
   padding: 30px;
@@ -40,4 +40,22 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.page-login__scores {
+  font-family: Pokemon;
+  font-weight: bold;
+  width: 100%;
+  background-color: var(--color-2__modal);
+  color: var(--color-1);
+  -webkit-text-stroke: 1px var(--color-2);
+  font-size: 30px;
+  line-height: 50px;
+  border: 2px solid var(--color-1);
+  transition: all 0.2s linear;
+  cursor: pointer;
+}
+
+.page-login__scores:hover {
+  transform: scale(1.05);
 }

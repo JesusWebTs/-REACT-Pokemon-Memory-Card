@@ -152,6 +152,7 @@
 }
 
 .player-form__decorator {
+  pointer-events: none;
   height: 180px;
   width: 180px;
   transform: scale(0.3);
