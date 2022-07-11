@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { SeasonCard, PokebalLoader, Scores } from "../../components";
+import {
+  SeasonCard,
+  PokebalLoader,
+  Scores,
+  SeasonCards,
+} from "../../components";
 import "./styles.css";
 import useGameOver from "./useGameOver";
 const seasons = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -13,6 +18,7 @@ function GameOver() {
   const { winner, score } = useGameOver({});
   const location = useLocation();
   const [isScorePage, setIsScorePage] = useState(false);
+  const [showRightMenu, setShowRightMenu] = useState(false);
 
   useEffect(() => {
     if (location.pathname === "/game-over") setIsScorePage(false);
@@ -45,13 +51,18 @@ function GameOver() {
           <Scores />
         </div>
       </div>
-      <div className="page-game-over__season">
-        <h2>Generations</h2>
-        {seasons.map((season) => (
-          <React.Fragment key={season}>
-            <SeasonCard season={season} />
-          </React.Fragment>
-        ))}
+      <div
+        className={`page-game-over__season ${
+          showRightMenu ? "page-game-over__season--show" : ""
+        }`}
+      >
+        <SeasonCards />
+        <button
+          className="page-game-over__buttom-season-show"
+          onClick={() => setShowRightMenu((prev) => !prev)}
+        >
+          <PokebalLoader />
+        </button>
       </div>
     </div>
   );

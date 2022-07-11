@@ -1,3 +1,37 @@
+:root {
+  --page-game-over-colums: 1fr min-content;
+  --page-game-over-areas: "game-over_scores-list";
+  --page-game-over-right-menu: absolute;
+  --page-game-over-right-menu-translate: 100%;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --page-game-over-colums: 1fr min-content;
+    --page-game-over-areas: "game-over_scores-list";
+    --page-game-over-right-menu: absolute;
+    --page-game-over-right-menu-translate: 100%;
+    --show-season-button: block;
+  }
+}
+@media (min-width: 1024px) {
+  :root {
+    --page-game-over-colums: 1fr;
+    --page-game-over-areas: "game-over_scores-list game-over-seasons";
+    --page-game-over-right-menu: relative;
+    --page-game-over-right-menu-translate: 0%;
+    --show-season-button: none;
+  }
+}
+@media (min-width: 1200px) {
+  :root {
+    --page-game-over-colums: 1fr;
+    --page-game-over-areas: "game-over_scores-list game-over-seasons";
+    --page-game-over-right-menu: relative;
+    --page-game-over-right-menu-translate: 0%;
+  }
+}
+
 .page-game-over__container {
   margin: 0;
   padding: 0;
@@ -7,9 +41,12 @@
   background-image: url(https://static.wikia.nocookie.net/890245e6-8f7b-4250-b984-f4337e3561a2);
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
-  justify-content: space-between;
+  display: grid;
   margin: 0;
+  grid-template-columns: var(--page-game-over-colums);
+  grid-template-rows: 1fr;
+  grid-template-areas: var(--page-game-over-areas);
+  position: relative;
 }
 
 .page-game-over__info {
@@ -21,6 +58,7 @@
 }
 
 .page-game-over__left {
+  grid-area: game-over_scores-list;
   display: flex;
   gap: 15px;
   flex-direction: column;
@@ -50,14 +88,23 @@
 }
 
 .page-game-over__season {
+  grid-area: game-over-seasons;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-  padding: 30px;
+  padding: 10px;
+  padding-left: 30px;
   background-color: var(--color-black__modal);
   box-shadow: 0 0 10px 10px var(--color-black__modal);
+  gap: 15px;
+  grid-template-columns: 1fr;
+  grid-template-rows: 0.98fr 60px;
+  height: 100%;
+  position: var(--page-game-over-right-menu);
+  right: 0;
+  transform: translateX(var(--page-game-over-right-menu-translate));
+  transition: all 0.2s linear;
+}
+.page-game-over__season--show {
+  transform: translateX(0%);
 }
 
 .page-game-over__season > h2 {
@@ -110,4 +157,30 @@
 .page-game-over__navigate:hover .page-game-over__decorator {
   left: 0%;
   right: -100%;
+}
+
+.page-game-over__buttom-season-show {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 100px;
+  height: 100px;
+  border-radius: 500px;
+  transform: translateX(-133%);
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: var(--show-season-button);
+  transition: all 0.2s linear;
+}
+
+.page-game-over__buttom-season-show {
+  transform: scale(0.5) translateX(-280%);
+}
+
+.page-game-over__season--show .page-game-over__buttom-season-show {
+  transform: scale(0.3) translateX(-480%);
 }
