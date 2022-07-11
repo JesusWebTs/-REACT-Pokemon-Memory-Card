@@ -27,7 +27,9 @@ function DifficultyButtons() {
       </button>
       <button
         className={`difficulty-button__difficulty-button ${
-          difficulty === 16 ? "difficulty-button__difficulty-button--active" : ""
+          difficulty === 16
+            ? "difficulty-button__difficulty-button--active"
+            : ""
         } `}
         onClick={(e) => {
           setDifficulty(16);
@@ -35,16 +37,18 @@ function DifficultyButtons() {
       >
         <span>H</span>
       </button>
-      {/* <button
+      <button
         className={`difficulty-button__difficulty-button ${
-          difficulty === 32 ? "difficulty-button__difficulty-button--active" : ""
+          difficulty === 32
+            ? "difficulty-button__difficulty-button--active"
+            : ""
         } `}
         onClick={(e) => {
-            setDifficulty(32);
+          setDifficulty(32);
         }}
       >
         <span>H+</span>
-      </button> */}
+      </button>
     </div>
   );
 }

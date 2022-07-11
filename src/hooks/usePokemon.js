@@ -11,13 +11,11 @@ function usePokemon() {
   const { seasonFilter, difficulty } = useContext(CardsContext);
   const [pokemonIds, setPokemonsIds] = useState([]);
   const [randomPokemonIds, setRandomPokemonIds] = useState([]);
-  const [amount, setAmount] = useState(8);
 
   useEffect(() => {
     setSearch(true);
     setPokemons([]);
     setPokemonsIds([]);
-    setAmount(difficulty);
     return () => {};
   }, []);
 
@@ -26,8 +24,8 @@ function usePokemon() {
   }, [search]);
 
   useEffect(() => {
-    let ids = [];
-    let keys = generateArrayRandom({ max: pokemonIds.length, amount: amount });
+    let keys = generateArrayRandom({ max: pokemonIds.length, amount: difficulty });
+    console.log(keys);
     if (keys) {
       setRandomPokemonIds(keys);
     }
