@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import { backendApi } from "../../services";
 
 const initData = {
@@ -23,11 +24,12 @@ const initData = {
 
 function useScores() {
   const [mathGames, setMathGames] = useState([]);
+  const location = useLocation();
 
   useEffect(() => {
     getAllData();
     return () => {};
-  }, []);
+  }, [location]);
 
   const getAllData = () => {
     return backendApi

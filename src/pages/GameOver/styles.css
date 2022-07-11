@@ -184,3 +184,10 @@
 .page-game-over__season--show .page-game-over__buttom-season-show {
   transform: scale(0.3) translateX(-480%);
 }
+
+.page-game-over__down {
+  width: 100%;
+  display: grid;
+  place-items: center;
+  padding: 0 40px;
+}
