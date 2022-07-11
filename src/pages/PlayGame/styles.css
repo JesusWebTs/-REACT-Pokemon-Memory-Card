@@ -3,6 +3,7 @@
   --page-play-game-player-info-position: fixed;
   --page-play-game-player-info-translate: -100%;
   --page-play-game-player-colums: 1fr;
+  --page-play-game__player-info__button-show: block;
 }
 
 @media (min-width: 778px) {
@@ -11,6 +12,7 @@
     --page-play-game-player-info-position: fixed;
     --page-play-game-player-info-translate: -100%;
     --page-play-game-player-colums: 1fr;
+    --page-play-game__player-info__button-show: block;
   }
 }
 @media (min-width: 1124px) {
@@ -19,6 +21,7 @@
     --page-play-game-player-info-position: sticky;
     --page-play-game-player-info-translate: 0%;
     --page-play-game-player-colums: min-content 1fr;
+    --page-play-game__player-info__button-show: none;
   }
 }
 @media (min-width: 1400px) {
@@ -27,6 +30,7 @@
     --page-play-game-player-info-position: sticky;
     --page-play-game-player-info-translate: 0%;
     --page-play-game-player-colums: min-content 1fr;
+    --page-play-game__player-info__button-show: none;
   }
 }
 
@@ -41,6 +45,7 @@
 .page-play-game__info {
   position: var(--page-play-game-player-info-position);
   top: 0;
+  width: 100%;
   max-width: 500px;
   background-color: var(--color-1__modal);
   border-top-right-radius: 10px;
@@ -67,10 +72,12 @@
 .page-play-game__turn,
 .page-play-game__players-info {
   background-color: var(--color-2__modal);
-  width: min-content;
   border-radius: 8px;
   padding: 20px;
   border: 2px solid var(--color-1);
+  width: 100%;
+  max-width: 500px;
+  overflow: hidden;
 }
 
 .page-play-game__turn {
@@ -145,6 +152,7 @@
   inset: 0;
   margin: auto;
   transition: all 0.2s linear;
+  display: var(--page-play-game__player-info__button-show);
 }
 
 .page-play-game__info--active {

@@ -25,6 +25,7 @@ function usePlayerForm() {
   }, [player1, player2, submited]);
 
   const setPlayer = ({ player, value }) => {
+    if (value.length > 7) return;
     if (player === 1) {
       setPlayer1(value);
     }
