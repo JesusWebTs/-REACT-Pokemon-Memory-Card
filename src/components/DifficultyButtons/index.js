@@ -37,7 +37,7 @@ function DifficultyButtons() {
       </button>
       <button
         className={`difficulty-button__difficulty-button ${
-          difficulty === 14 ? "difficulty-button__difficulty-button--active" : ""
+          difficulty === 32 ? "difficulty-button__difficulty-button--active" : ""
         } `}
         onClick={(e) => {
             setDifficulty(32);
