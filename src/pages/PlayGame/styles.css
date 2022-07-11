@@ -1,33 +1,45 @@
 :root {
   --page-play-game-colums: 2;
+  --page-play-game-player-info-position: fixed;
+  --page-play-game-player-info-translate: -100%;
+  --page-play-game-player-colums: 1fr;
 }
 
 @media (min-width: 778px) {
   :root {
     --page-play-game-colums: 4;
+    --page-play-game-player-info-position: fixed;
+    --page-play-game-player-info-translate: -100%;
+    --page-play-game-player-colums: 1fr;
   }
 }
 @media (min-width: 1124px) {
   :root {
     --page-play-game-colums: 6;
+    --page-play-game-player-info-position: sticky;
+    --page-play-game-player-info-translate: 0%;
+    --page-play-game-player-colums: min-content 1fr;
   }
 }
 @media (min-width: 1400px) {
   :root {
     --page-play-game-colums: 8;
+    --page-play-game-player-info-position: sticky;
+    --page-play-game-player-info-translate: 0%;
+    --page-play-game-player-colums: min-content 1fr;
   }
 }
 
 .page-play-game__container {
   display: grid;
-  grid-template-columns: min-content 1fr;
+  grid-template-columns: var(--page-play-game-player-colums);
   background-color: var(--color-black);
   justify-content: space-evenly;
   width: 100%;
 }
 
 .page-play-game__info {
-  position: sticky;
+  position: var(--page-play-game-player-info-position);
   top: 0;
   max-width: 500px;
   background-color: var(--color-1__modal);
@@ -40,8 +52,12 @@
   flex-direction: column;
   gap: 50px;
   padding: 15px;
+  z-index: 20;
+  transform: translateX(var(--page-play-game-player-info-translate));
+  transition: all 0.2s linear;
 }
 .page-play-game__cards {
+  z-index: 15;
   display: grid;
   grid-template-columns: repeat(var(--page-play-game-colums), 1fr);
   align-items: center;
@@ -117,4 +133,23 @@
   font-size: 28px;
   -webkit-text-stroke: 1px var(--color-2);
   line-height: 40px;
+}
+
+.page-play-game__player-info__button {
+  position: absolute;
+  transform: translateX(50%) scale(0.5);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  inset: 0;
+  margin: auto;
+  transition: all 0.2s linear;
+}
+
+.page-play-game__info--active {
+  transform: translateX(0%);
+}
+.page-play-game__info--active .page-play-game__player-info__button {
+  transform: translateX(50%) scale(0.3);
 }

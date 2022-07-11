@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./styles.css";
 import usePokemon from "../..//hooks/usePokemon";
-import { PokeCard } from "../../components";
+import { PokebalLoader, PokeCard } from "../../components";
 import usePlayGame from "./usePlayGame";
 
 import { PlayersContext } from "../../context/playersContext";
@@ -9,6 +9,7 @@ import { PlayersContext } from "../../context/playersContext";
 function PlayGame() {
   const { pokemons } = usePokemon();
   const { turnCard } = usePlayGame({ pokemons });
+  const [showPlayerInfo, setShowPlayerInfo] = useState(false);
 
   const {
     player1,
@@ -25,7 +26,7 @@ function PlayGame() {
 
   return (
     <div className="page-play-game__container">
-      <div className="page-play-game__info">
+      <div className={`page-play-game__info ${showPlayerInfo ? "page-play-game__info--active" : ""}`}>
         <div className="page-play-game__turn">
           <h2 className="page-play-game__title">Turno #{turn}</h2>
           <p>{currentPlayer.name}</p>
@@ -46,6 +47,12 @@ function PlayGame() {
               </p>
             </div>
           </div>
+          <button
+            className="page-play-game__player-info__button"
+            onClick={() => setShowPlayerInfo((prev) => !prev)}
+          >
+            <PokebalLoader />
+          </button>
         </div>
       </div>
       <div className="page-play-game__cards">
