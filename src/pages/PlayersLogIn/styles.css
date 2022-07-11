@@ -53,18 +53,23 @@
   grid-area: login-seasons;
   display: grid;
   padding: 10px;
+  padding-top: 20px;
   padding-left: 30px;
   background-color: var(--color-black__modal);
   box-shadow: 0 0 10px 10px var(--color-black__modal);
   gap: 15px;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.98fr 60px;
-  grid-template-areas: "season-seasons" "season-button";
+  grid-template-rows: 0px 0.98fr 60px;
+  grid-template-areas: "difficult-button" "season-seasons" "season-button";
   height: 100%;
   position: var(--page-login-right-menu);
   right: 0;
   transform: translateX(var(--page-login-right-menu-translate));
   transition: all 0.2s linear;
+}
+
+.page-login__cards-button {
+  grid-area: difficult-button;
 }
 
 .page-login__scores {

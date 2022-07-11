@@ -16,6 +16,7 @@ function CardsProvider({ children }) {
   const [targetsIds, setTargetsIds] = useState([]);
   const [flippedList, setFlipedList] = useState([]);
   const [seasonFilter, setSeasonFilter] = useState([1]);
+  const [difficulty, setDifficulty] = useState(4);
 
   const filterSeason = ({ season }) => {
     if (seasonFilter.includes(season)) {
@@ -51,6 +52,8 @@ function CardsProvider({ children }) {
         targetsIds,
         setTargetsIds,
         resetGame,
+        difficulty,
+        setDifficulty,
       }}
     >
       {children}

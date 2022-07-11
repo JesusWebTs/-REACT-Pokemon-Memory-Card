@@ -3,23 +3,8 @@ import { CardsContext } from "../../context/cardContext";
 import { PlayersContext } from "../../context/playersContext";
 
 function useGameOver() {
-  const {
-    turnCard,
-    resetCards,
-    setFlipedList,
-    targets,
-    targetsIds,
-    flippedList,
-  } = useContext(CardsContext);
-  const {
-    addPlayerCard,
-    changeTurn,
-    playerTurn,
-    nextTurn,
-    availableToPlay,
-    player1,
-    player2,
-  } = useContext(PlayersContext);
+  const {} = useContext(CardsContext);
+  const { player1, player2 } = useContext(PlayersContext);
 
   const [winner, setWinner] = useState("");
   const [score, setScore] = useState(0);

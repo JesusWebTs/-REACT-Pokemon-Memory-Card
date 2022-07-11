@@ -3,7 +3,7 @@ import "./styles.css";
 import usePokemon from "../..//hooks/usePokemon";
 import { PokeCard } from "../../components";
 import usePlayGame from "./usePlayGame";
-import { CardsContext } from "../../context/cardContext";
+
 import { PlayersContext } from "../../context/playersContext";
 
 function PlayGame() {

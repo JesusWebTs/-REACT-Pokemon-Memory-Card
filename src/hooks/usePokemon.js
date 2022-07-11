@@ -8,7 +8,7 @@ import PokeInfoDTO from "../DTO/PokeInfo.DTO";
 function usePokemon() {
   const [pokemons, setPokemons] = useState([]);
   const [search, setSearch] = useState(false);
-  const { seasonFilter } = useContext(CardsContext);
+  const { seasonFilter, difficulty } = useContext(CardsContext);
   const [pokemonIds, setPokemonsIds] = useState([]);
   const [randomPokemonIds, setRandomPokemonIds] = useState([]);
   const [amount, setAmount] = useState(8);
@@ -17,6 +17,7 @@ function usePokemon() {
     setSearch(true);
     setPokemons([]);
     setPokemonsIds([]);
+    setAmount(difficulty);
     return () => {};
   }, []);
 
@@ -46,13 +47,6 @@ function usePokemon() {
         });
     return () => {};
   }, [randomPokemonIds]);
-
-  useEffect(() => {
-    pokemonApi
-      .getAllPokemonInfo({ ids: [1, 2, 3, 4] })
-      .then((res) => console.log(res));
-    return () => {};
-  }, []);
 
   const getPokemonsIdsFiltered = () => {
     let ids = [];

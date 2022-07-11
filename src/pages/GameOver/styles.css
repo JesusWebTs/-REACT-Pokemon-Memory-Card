@@ -89,14 +89,14 @@
 
 .page-game-over__season {
   grid-area: game-over-seasons;
-  display: flex;
+  display: grid;
   padding: 10px;
   padding-left: 30px;
   background-color: var(--color-black__modal);
   box-shadow: 0 0 10px 10px var(--color-black__modal);
   gap: 15px;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.98fr 60px;
+  grid-template-rows: 0px 0.98fr;
   height: 100%;
   position: var(--page-game-over-right-menu);
   right: 0;

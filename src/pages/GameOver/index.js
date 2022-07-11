@@ -6,6 +6,7 @@ import {
   Scores,
   SeasonCards,
 } from "../../components";
+import DifficultyButtons from "../../components/DifficultyButtons";
 import "./styles.css";
 import useGameOver from "./useGameOver";
 const seasons = [1, 2, 3, 4, 5, 6, 7, 8];
@@ -51,19 +52,24 @@ function GameOver() {
           <Scores />
         </div>
       </div>
-      <div
-        className={`page-game-over__season ${
-          showRightMenu ? "page-game-over__season--show" : ""
-        }`}
-      >
-        <SeasonCards />
-        <button
-          className="page-game-over__buttom-season-show"
-          onClick={() => setShowRightMenu((prev) => !prev)}
+      {isScorePage ? (
+        <></>
+      ) : (
+        <div
+          className={`page-game-over__season ${
+            showRightMenu ? "page-game-over__season--show" : ""
+          }`}
         >
-          <PokebalLoader />
-        </button>
-      </div>
+          <DifficultyButtons />
+          <SeasonCards />
+          <button
+            className="page-game-over__buttom-season-show"
+            onClick={() => setShowRightMenu((prev) => !prev)}
+          >
+            <PokebalLoader />
+          </button>
+        </div>
+      )}
     </div>
   );
 }

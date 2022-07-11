@@ -22,8 +22,7 @@ function TestBackend() {
   const getAllData = () => {
     return backendApi
       .get({ endPoint: "/game/base" })
-      .then((el) => {
-        console.log(el);
+      .then((el) => {        
         return el.payload;
       })
       .catch((err) => console.log(err));

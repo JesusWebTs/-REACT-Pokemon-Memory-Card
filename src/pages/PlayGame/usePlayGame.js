@@ -22,8 +22,10 @@ function usePlayGame({ pokemons }) {
     player1,
     player2,
     newGame,
+    availableToPlay,
   } = useContext(PlayersContext);
   useEffect(() => {
+    if (!availableToPlay) navigate("/");
     resetGame();
     newGame();
 

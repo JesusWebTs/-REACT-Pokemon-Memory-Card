@@ -1,0 +1,30 @@
+.difficulty-button__container {
+  display: flex;
+}
+
+.difficulty-button__difficulty-button {
+  background-color: transparent;
+  border-radius: 8px;
+  border: 2px solid var(--color-1__modal);
+  height: 40px;
+  width: 50px;
+  font-weight: bold;
+  color: var(--color-1);
+  -webkit-text-stroke: 1px var(--color-2);
+  font-size: 24px;
+  font-family: Pokemon;
+  line-height: 20px;
+  transition: all 0.2s linear;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.difficulty-button__difficulty-button > span {
+  transform: translateY(-5px);
+}
+
+.difficulty-button__difficulty-button:hover,
+.difficulty-button__difficulty-button--active {
+  background-color: var(--color-2__modal);
+}

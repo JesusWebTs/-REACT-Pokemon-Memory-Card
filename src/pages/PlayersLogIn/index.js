@@ -2,12 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import "./styles.css";
 import { useNavigate } from "react-router-dom";
 import { PlayerForm, PokebalLoader } from "../../components";
-import { SeasonCard, SeasonCards } from "../../components";
+import { SeasonCards } from "../../components";
 import { PlayersContext } from "../../context/playersContext";
+import DifficultyButtons from "../../components/DifficultyButtons";
 
-const seasons = [1, 2, 3, 4, 5, 6, 7, 8];
 function PlayersLogIn() {
-  const { setPlayerInfo, addPlayerCard, resetAll } = useContext(PlayersContext);
+  const { setPlayerInfo, resetAll } = useContext(PlayersContext);
+
   const [showRightMenu, setShowRightMenu] = useState(false);
   let navigate = useNavigate();
 
@@ -33,6 +34,7 @@ function PlayersLogIn() {
           showRightMenu ? "page-login__season--show" : ""
         }`}
       >
+        <DifficultyButtons />
         <div className="page-login__cards">
           <SeasonCards />
         </div>
