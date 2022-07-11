@@ -35,7 +35,7 @@ function DifficultyButtons() {
       >
         <span>H</span>
       </button>
-      <button
+      {/* <button
         className={`difficulty-button__difficulty-button ${
           difficulty === 32 ? "difficulty-button__difficulty-button--active" : ""
         } `}
@@ -44,7 +44,7 @@ function DifficultyButtons() {
         }}
       >
         <span>H+</span>
-      </button>
+      </button> */}
     </div>
   );
 }
