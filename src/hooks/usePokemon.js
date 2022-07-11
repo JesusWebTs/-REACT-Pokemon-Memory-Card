@@ -4,6 +4,7 @@ import { CardsContext } from "../context/cardContext";
 import { pokemonApi } from "../services";
 import generateArrayRandom from "../helpers/generateArrayRandom";
 import shuffleArray from "../helpers/shuffleArray";
+import PokeInfoDTO from "../DTO/PokeInfo.DTO";
 function usePokemon() {
   const [pokemons, setPokemons] = useState([]);
   const [search, setSearch] = useState(false);
@@ -27,21 +28,22 @@ function usePokemon() {
     let ids = [];
     let keys = generateArrayRandom({ max: pokemonIds.length, amount: amount });
     if (keys) {
-      keys.forEach((key) => (ids = [...ids, pokemonIds[key]]));
-      ids = ids.map((el) => [el, el]).flat();
-      ids = shuffleArray(ids);
-      setRandomPokemonIds(ids);
+      setRandomPokemonIds(keys);
     }
 
     return () => {};
-  }, [pokemonIds]); 
-  
- 
+  }, [pokemonIds]);
+
   useEffect(() => {
     if (search)
       pokemonApi
         .getAllPokemonInfo({ ids: randomPokemonIds })
-        .then((pokemons) => setPokemons(pokemons));
+        .then((pokemons) => {
+          const duppedPokemons = pokemons
+            .map((pokemon) => [pokemon, new PokeInfoDTO({ pokeInfo: pokemon })])
+            .flat(2);
+          setPokemons(shuffleArray(duppedPokemons));
+        });
     return () => {};
   }, [randomPokemonIds]);
 

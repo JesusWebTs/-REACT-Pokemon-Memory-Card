@@ -13,12 +13,8 @@ function PokeCard({ pokeInfo }) {
   const { id, name, img, types, color, uuid } = pokeInfo;
   const {
     user,
-    setUser,
     loader,
     setLoader,
-    fliped,
-    setFliped,
-    flipCard,
     verifyAndTurn,
     targets,
     flippedList,

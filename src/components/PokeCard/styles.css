@@ -145,79 +145,36 @@
   height: calc(0px * var(--reduce-size));
   border-radius: 100%;
 
-  box-shadow:
-calc(0px * var(--reduce-size))
-calc(0px * var(--reduce-size))
-calc(100px * var(--reduce-size))
-calc(123px * var(--reduce-size))
+  box-shadow: calc(0px * var(--reduce-size)) calc(0px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(123px * var(--reduce-size))
       var(--poke-card-color-1),
-   
-calc(100px * var(--reduce-size))
-calc(0px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(125px * var(--reduce-size))
+    calc(100px * var(--reduce-size)) calc(0px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(125px * var(--reduce-size))
       var(--poke-card-color-2),
-   
-calc(-100px * var(--reduce-size))
-calc(0px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(118px * var(--reduce-size))
+    calc(-100px * var(--reduce-size)) calc(0px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(118px * var(--reduce-size))
       var(--poke-card-color-3),
-   
-calc(100px * var(--reduce-size))
-calc(100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(112px * var(--reduce-size))
+    calc(100px * var(--reduce-size)) calc(100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(112px * var(--reduce-size))
       var(--poke-card-color-2),
-   
-calc(100px * var(--reduce-size))
-calc(100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(117px * var(--reduce-size))
+    calc(100px * var(--reduce-size)) calc(100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(117px * var(--reduce-size))
       var(--poke-card-color-1),
-   
-calc(-100px * var(--reduce-size))
-calc(-100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(113px * var(--reduce-size))
+    calc(-100px * var(--reduce-size)) calc(-100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(113px * var(--reduce-size))
       var(--poke-card-color-2),
-   
-calc(0px * var(--reduce-size))
-calc(100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(115px * var(--reduce-size))
+    calc(0px * var(--reduce-size)) calc(100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(115px * var(--reduce-size))
       var(--poke-card-color-3),
-   
-calc(0px * var(--reduce-size))
-calc(-100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(120px * var(--reduce-size))
+    calc(0px * var(--reduce-size)) calc(-100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(120px * var(--reduce-size))
       var(--poke-card-color-2),
-   
-calc(0px * var(--reduce-size))
-calc(100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(117px * var(--reduce-size))
+    calc(0px * var(--reduce-size)) calc(100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(117px * var(--reduce-size))
       var(--poke-card-color-1),
-   
-calc(0px * var(--reduce-size))
-calc(-100px * var(--reduce-size))
-     
-calc(100px * var(--reduce-size))
-calc(115px * var(--reduce-size))
-      var(--poke-card-color-3),
-
-calc(-100px * var(--reduce-size))
-calc(-15px * var(--reduce-size))
-      red;
+    calc(0px * var(--reduce-size)) calc(-100px * var(--reduce-size))
+      calc(100px * var(--reduce-size)) calc(115px * var(--reduce-size))
+      var(--poke-card-color-3);
 }
 
 .poke-card__types {
@@ -227,13 +184,15 @@ calc(-15px * var(--reduce-size))
 
 .poke-card__image-loader {
   position: absolute;
-  inset: 0;
   margin: auto;
   transition: all 0.2s linear;
   transform: scale(0);
+  width: min-content;
+  height: min-content;
+  transform: scale(calc(0 * var(--reduce-size)));
 }
 .poke-card__image-loader--show {
-  transform: scale(1.7);
+  transform: scale(calc(1.7 * var(--reduce-size)));
 }
 
 .poke-card__root {
