@@ -153,6 +153,11 @@
   margin: auto;
   transition: all 0.2s linear;
   display: var(--page-play-game__player-info__button-show);
+  pointer-events: none;
+}
+
+.page-play-game__player-info__button > * {
+  pointer-events: all;
 }
 
 .page-play-game__info--active {
