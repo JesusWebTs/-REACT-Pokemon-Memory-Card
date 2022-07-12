@@ -24,10 +24,13 @@ function usePokemon() {
   }, [search]);
 
   useEffect(() => {
-    let keys = generateArrayRandom({ max: pokemonIds.length, amount: difficulty });
+    let keys = generateArrayRandom({
+      max: pokemonIds.length,
+      amount: difficulty,
+    });
     console.log(keys);
     if (keys) {
-      setRandomPokemonIds(keys);
+      setRandomPokemonIds(keys.map((key) => pokemonIds[key]));
     }
 
     return () => {};
